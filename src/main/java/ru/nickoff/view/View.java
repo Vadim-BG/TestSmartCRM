@@ -10,6 +10,7 @@ public class View {
     private ScrollPane mScrollPane;
     private BorderPane mMainPane;
     private Scene mMainScene;
+    private TopMenuBar mTopMenuBar;
 
     public void drawPrimaryStage(Stage primaryStage) {
         mPrimaryStage = primaryStage;
@@ -25,5 +26,18 @@ public class View {
         mPrimaryStage.setScene(mMainScene);
 
         mPrimaryStage.show();
+    }
+
+    public Stage getmPrimaryStage() {
+        return mPrimaryStage;
+    }
+
+    public void drawTopMenu() {
+        mTopMenuBar = new TopMenuBar();
+        mMainPane.setTop(mTopMenuBar);
+    }
+
+    public TopMenuBar getmTopMenuBar() {
+        return mTopMenuBar;
     }
 }
