@@ -10,6 +10,8 @@ public class View {
     private ScrollPane mScrollPane;
     private BorderPane mMainPane;
     private Scene mMainScene;
+    private LeftMenu mLeftMenu;
+
     private TopMenuBar mTopMenuBar;
 
     public void drawPrimaryStage(Stage primaryStage) {
@@ -37,7 +39,16 @@ public class View {
         mMainPane.setTop(mTopMenuBar);
     }
 
+    public void drawLeftMenu() {
+        mLeftMenu = new LeftMenu();
+        mMainPane.setLeft(mLeftMenu);
+    }
+
     public TopMenuBar getmTopMenuBar() {
         return mTopMenuBar;
+    }
+
+    public LeftMenu getmLeftMenu() {
+        return mLeftMenu;
     }
 }

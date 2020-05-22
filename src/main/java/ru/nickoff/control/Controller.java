@@ -25,10 +25,23 @@ public class Controller {
         mView.drawTopMenu();
         setTopMenuControl();
 
+        //Adding left menu
+        mView.drawLeftMenu();
+        setLeftMenuControl();
+
         mView.getmPrimaryStage().setOnCloseRequest(e -> {
             e.consume();
             exitFromProgram();
         });
+    }
+
+    private void setLeftMenuControl() {
+        mView.getmLeftMenu().getmTreeView().getSelectionModel().selectedIndexProperty().addListener(
+                (observable, oldValue, newValue) -> {
+
+                    System.out.println(mView.getmLeftMenu().getmTreeView().getTreeItem(newValue.intValue()).getValue());
+                }
+        );
     }
 
     private void setTopMenuControl() {
